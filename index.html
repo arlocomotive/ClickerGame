@@ -1,0 +1,82 @@
+<html>
+
+    <head>
+
+        <title>Clicker game (real)</title>
+
+    </head>
+
+    <body>
+        <font face="Comic Sans MS"><div align="center">
+
+            <h3><font color=lime>SCORE: <span id="score">0</span></font></h3>
+
+            <hr/>
+
+            <h4><font color=blue>ADD AMOUNT (PER CLICK): <span id="addAmountPerClick">1</span></font></h4>
+
+            <hr/>
+
+            <h1 onclick="addToScore()"><font color=red>C</font><font color=orange>L</font><font color=yellow>I</font><font color=green>C</font><font color=blue>K</font> <font color=indigo>M</font><font color=violet>E</font></h1>
+
+            <hr/>
+
+            <h2 onclick="upgrade()"><font color=cyan>UPGRADE: <span id="upgradeAmount">15</span></font></h2>
+
+        </div>
+
+        <script>
+
+            var score = 0;
+
+            var addAmountPerClick = 1;
+
+            var upgradeAmount = 15;
+
+            var pickup = new Audio("pickup.wav");
+
+            var upgradee = new Audio("upgrade.wav");
+
+            var no = new Audio("no.wav");
+
+            function upgrade() {
+
+                if (score >= upgradeAmount) {
+
+                    score = score - upgradeAmount
+
+                    upgradeAmount = Math.round(upgradeAmount * 1.5)
+
+                    addAmountPerClick = addAmountPerClick + 1
+
+                    document.getElementById("score").innerHTML = score;
+
+                    document.getElementById("upgradeAmount").innerHTML = upgradeAmount;
+
+                    document.getElementById("addAmountPerClick").innerHTML = addAmountPerClick;
+
+                    upgradee.play();
+
+                } else {
+
+                    no.play();
+
+                }
+
+            }
+
+            function addToScore() {
+
+                score = score + addAmountPerClick;
+
+                document.getElementById("score").innerHTML = score;
+
+                pickup.play();
+
+            }
+
+        </script>
+
+    </body>
+
+</html>
