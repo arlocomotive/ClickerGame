@@ -25,57 +25,7 @@
 
         </div>
 
-        <script>
-
-            var score = 0;
-
-            var addAmountPerClick = 1;
-
-            var upgradeAmount = 15;
-
-            var pickup = new Audio("pickup.wav");
-
-            var upgradee = new Audio("upgrade.wav");
-
-            var no = new Audio("no.wav");
-
-            function upgrade() {
-
-                if (score >= upgradeAmount) {
-
-                    score = score - upgradeAmount
-
-                    upgradeAmount = Math.round(upgradeAmount * 1.5)
-
-                    addAmountPerClick = addAmountPerClick + 1
-
-                    document.getElementById("score").innerHTML = score;
-
-                    document.getElementById("upgradeAmount").innerHTML = upgradeAmount;
-
-                    document.getElementById("addAmountPerClick").innerHTML = addAmountPerClick;
-
-                    upgradee.play();
-
-                } else {
-
-                    no.play();
-
-                }
-
-            }
-
-            function addToScore() {
-
-                score = score + addAmountPerClick;
-
-                document.getElementById("score").innerHTML = score;
-
-                pickup.play();
-
-            }
-
-        </script>
+        <script src="main.js"></script>
 
     </body>
 
