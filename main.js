@@ -38,7 +38,7 @@ function upgrade() {
 
 function addToScore() {
 
-    score = score + addAmountPerClick;
+    score += addAmountPerClick;
 
     document.getElementById("score").innerHTML = score;
 
