@@ -3,6 +3,8 @@
     <head>
 
         <title>Clicker game (real)</title>
+        
+        <link rel="stylesheet" href="main.css">
 
     </head>
 
@@ -10,19 +12,35 @@
 
         <font face="Comic Sans MS"><div align="center">
 
-            <h3><font color=lime>SCORE: <span id="score">0</span></font></h3>
+            <h1 class="text textShadow">
+                <font color=lime>
+                    SCORE: <span id="score">0</span>
+                </font>
+            </h1>
 
             <hr/>
 
-            <h4><font color=blue>ADD AMOUNT (PER CLICK): <span id="addAmountPerClick">1</span></font></h4>
+            <h3 class="text textShadow">
+                <font color="#FF00FF">
+                    CLICK VALUE: <span id="clickValue">1</span>
+                </font>
+            </h3>
 
             <hr/>
 
-            <h1 onclick="addToScore()"><font color=red>C</font><font color=orange>L</font><font color=yellow>I</font><font color=green>C</font><font color=blue>K</font> <font color=indigo>M</font><font color=violet>E</font></h1>
+            <h1 onclick="addToScore()" class="unselectable pointer rainbow round text textShadow shadow">
+                <font color=white>
+                    CLICK ME!
+                </font>
+            </h1>
 
             <hr/>
 
-            <h2 onclick="upgrade()"><font color=cyan>UPGRADE: <span id="upgradeAmount">15</span></font></h2>
+            <h2 onclick="upgrade()" class="unselectable pointer upgrade round text textShadow shadow">
+                <font color=white>
+                    UPGRADE: <span id="upgradeAmount">15</span>
+                </font>
+            </h2>
 
         </div></font>
 

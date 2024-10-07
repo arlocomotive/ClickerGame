@@ -1,8 +1,11 @@
-const score = 0;
 
-const addAmountPerClick = 1;
+const HTMLScore = document.getElementById("score")
+const HTMLUpgrade = document.getElementById("upgradeAmount")
+const HTMLClickValue = document.getElementById("clickValue")
 
-const upgradeAmount = 15;
+var addAmountPerClick = 1;
+var upgradeAmount = 15;
+var score = 0;
 
 function playSound(sound) {
 
@@ -14,17 +17,13 @@ function upgrade() {
 
     if (score >= upgradeAmount) {
 
-        score = score - upgradeAmount
+        score -= upgradeAmount
+        upgradeAmount = Math.ceil(upgradeAmount * 1.5)
+        addAmountPerClick += 1
 
-        upgradeAmount = Math.round(upgradeAmount * 1.5)
-
-        addAmountPerClick = addAmountPerClick + 1
-
-        document.getElementById("score").innerHTML = score;
-
-        document.getElementById("upgradeAmount").innerHTML = upgradeAmount;
-
-        document.getElementById("addAmountPerClick").innerHTML = addAmountPerClick;
+        HTMLScore.innerHTML = score;
+        HTMLUpgrade.innerHTML = upgradeAmount;
+        HTMLClickValue.innerHTML = addAmountPerClick;
 
         playSound("upgrade.wav")
 
@@ -41,7 +40,5 @@ function addToScore() {
     score += addAmountPerClick;
 
     document.getElementById("score").innerHTML = score;
-
-    playSound("pickup.wav")
 
 }

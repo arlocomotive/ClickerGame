@@ -1,0 +1,61 @@
+/* https://stackoverflow.com/questions/2310734/how-to-make-html-text-unselectable */
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+/* https://cssgradient.io */
+.rainbow {
+    background: rgb(255,0,0);
+    background: -moz-linear-gradient(135deg, rgba(255,0,0,1) 0%, rgba(255,255,9,1) 16.66666667%, rgba(0,255,0,1) 33.33333333%, rgba(0,255,255,1) 50%, rgba(0,0,255,1) 66.66666667%, rgba(255,0,255,1) 83.33333333%, rgba(255,0,0,1) 100%);
+    background: -webkit-linear-gradient(135deg, rgba(255,0,0,1) 0%, rgba(255,255,9,1) 16.66666667%, rgba(0,255,0,1) 33.33333333%, rgba(0,255,255,1) 50%, rgba(0,0,255,1) 66.66666667%, rgba(255,0,255,1) 83.33333333%, rgba(255,0,0,1) 100%);
+    background: linear-gradient(135deg, rgba(255,0,0,1) 0%, rgba(255,255,9,1) 16.66666667%, rgba(0,255,0,1) 33.33333333%, rgba(0,255,255,1) 50%, rgba(0,0,255,1) 66.66666667%, rgba(255,0,255,1) 83.33333333%, rgba(255,0,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff0000",endColorstr="#ff0000",GradientType=1);
+}
+
+.upgrade {
+    background: rgb(0,164,218);
+    background: -moz-linear-gradient(0deg, rgba(0,164,218,1) 0%, rgba(0,255,255,1) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(0,164,218,1) 0%, rgba(0,255,255,1) 100%);
+    background: linear-gradient(0deg, rgba(0,164,218,1) 0%, rgba(0,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00a4da",endColorstr="#00ffff",GradientType=1);
+}
+
+.round {
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.text {
+    width: fit-content;
+    block-size: fit-content;
+}
+
+.textShadow {
+    text-shadow:
+        1px 1px 1px black,
+        2px 2px 1px black;
+}
+
+.shadow {
+    box-shadow:
+        1px 1px 1px black,
+        2px 2px 1px black;
+}
+
+body {
+    position: absolute;
+    width: 30%;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
