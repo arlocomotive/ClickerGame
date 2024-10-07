@@ -29,9 +29,17 @@
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00a4da",endColorstr="#00ffff",GradientType=1);
 }
 
-.round {
-    padding: 8px;
+.button {
+    padding: 6px;
     border-radius: 8px;
+}
+
+.button:hover {
+    padding: 8px;
+}
+
+.button:active {
+    padding: 7px;
 }
 
 .text {
@@ -41,21 +49,32 @@
 
 .textShadow {
     text-shadow:
-        1px 1px 1px black,
-        2px 2px 1px black;
+        1px 1px 1px rgba(0, 0, 0, 0.75),
+        2px 2px 1px rgba(0, 0, 0, 0.75);
 }
 
 .shadow {
     box-shadow:
-        1px 1px 1px black,
-        2px 2px 1px black;
+        1px 1px 1px rgba(0, 0, 0, 0.75),
+        2px 2px 1px rgba(0, 0, 0, 0.75);
+}
+
+hr {
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+}
+
+div {
+    width: auto 10px;
 }
 
 body {
+    background-color: rgb(89, 87, 117);
     position: absolute;
-    width: 30%;
     top: 50%;
     left: 50%;
+    width: 360px;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    font-family: 'Courier New', Courier, monospace;
 }

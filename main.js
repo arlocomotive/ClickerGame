@@ -3,13 +3,48 @@ const HTMLScore = document.getElementById("score")
 const HTMLUpgrade = document.getElementById("upgradeAmount")
 const HTMLClickValue = document.getElementById("clickValue")
 
-var addAmountPerClick = 1;
-var upgradeAmount = 15;
-var score = 0;
+const storage = window.localStorage
+const storageEnabled = (typeof(storage) !== "undefined")
+
+if (storageEnabled) {
+    if (!storage.score) {
+        storage.score = 0;
+    }
+    if (!storage.clickValue) {
+        storage.clickValue = 1;
+    }
+}
+
+var clickValue = (Number(storage.clickValue) || 1);
+var upgradeAmount = Infinity; // before data loads
+var score = (Number(storage.score) || 0);
 
 function playSound(sound) {
 
     new Audio(sound).play();
+
+}
+
+function updateHTML() {
+
+    HTMLScore.innerHTML = score;
+    HTMLUpgrade.innerHTML = upgradeAmount;
+    HTMLClickValue.innerHTML = clickValue;
+
+}
+
+function saveData() {
+
+    if (storageEnabled) {
+        storage.score = score;
+        storage.clickValue = clickValue;
+    }
+
+}
+
+function updateUpgradeAmount() {
+
+    upgradeAmount = Math.ceil((15 + (clickValue ** 2)));
 
 }
 
@@ -18,12 +53,11 @@ function upgrade() {
     if (score >= upgradeAmount) {
 
         score -= upgradeAmount
-        upgradeAmount = Math.ceil(upgradeAmount * 1.5)
-        addAmountPerClick += 1
+        clickValue += 1
+        updateUpgradeAmount()
 
-        HTMLScore.innerHTML = score;
-        HTMLUpgrade.innerHTML = upgradeAmount;
-        HTMLClickValue.innerHTML = addAmountPerClick;
+        updateHTML()
+        saveData()
 
         playSound("upgrade.wav")
 
@@ -37,8 +71,13 @@ function upgrade() {
 
 function addToScore() {
 
-    score += addAmountPerClick;
+    score += clickValue;
 
-    document.getElementById("score").innerHTML = score;
+    saveData()
+
+    HTMLScore.innerHTML = score;
 
 }
+
+updateUpgradeAmount()
+updateHTML()
