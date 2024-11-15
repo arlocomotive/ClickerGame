@@ -1,0 +1,1 @@
+youuy clicka and get ooint and then yiuy can icrnease potint amount when click by press ugprade button for ecrtain amtount of poitint and then you get chareg ed that amount and like stuff omg happens omg omg omg it omg
